@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0F172A;
+  --color-secondary: #1E293B;
+  --color-accent: #C9A227;
+  --color-accent-dark: #A8841C;
+  --color-background: #F8FAFC;
+  --color-darktext: #111827;
+  --color-muted: #64748B;
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  background-color: #F8FAFC;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar for clean look but keep functional */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth focus outlines */
+:focus-visible {
+  outline: 2px solid #C9A227;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Custom selection */
+::selection {
+  background-color: #C9A227;
+  color: #0F172A;
+}
+
+/* Image utilities */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hero image overlay */
+.hero-gradient {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.55) 0%, rgba(15, 23, 42, 0.75) 100%);
+}
+
+.hero-gradient-strong {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.85) 100%);
+}
+
+/* Card hover lift */
+.card-lift {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.15);
+}
+
+/* Image zoom on hover */
+.img-zoom {
+  transition: transform 0.7s ease;
+}
+.group:hover .img-zoom,
+.hover-parent:hover .img-zoom {
+  transform: scale(1.08);
+}
+
+/* Gold accent border */
+.gold-border {
+  border: 1px solid #C9A227;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Container helper */
+.container-x {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 640px) {
+  .container-x { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+@media (min-width: 1024px) {
+  .container-x { padding-left: 2rem; padding-right: 2rem; }
+}
+@media (min-width: 1280px) {
+  .container-x { padding-left: 2.5rem; padding-right: 2.5rem; }
+}
+
+/* Section padding */
+.section-y {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 768px) {
+  .section-y { padding-top: 5.5rem; padding-bottom: 5.5rem; }
+}
+@media (min-width: 1024px) {
+  .section-y { padding-top: 7rem; padding-bottom: 7rem; }
+}
